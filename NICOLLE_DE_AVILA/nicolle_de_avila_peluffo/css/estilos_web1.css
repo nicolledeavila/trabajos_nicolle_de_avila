@@ -1,0 +1,1187 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+#inicio-informacion{
+    background-color: rgb(33, 31, 31);
+    width: 1010px; 
+    height: 6000px;
+    
+    align-items: center;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+.container{
+    max-width: 12000px;
+    max-height:1000px;
+    margin: 0 auto; 
+}
+
+body{
+    background-color:black;
+    color: #fff;
+}
+
+.header-content{
+    text-align: center;
+    
+}
+
+.header-content h1{
+    font-size: 50px;
+    line-height: 58px;
+    color:rgb(255, 255, 255);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.header-content p{
+    font-size: 16px;
+    color: antiquewhite;
+    padding: 0 250px;
+    margin-bottom: 25px;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: rgb(2, 255, 255);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+.btn-1:hover{
+    background-color: rgb(6, 81, 81);
+}
+
+
+
+/* aca inicia el carrucel*/
+
+#conteItemsCarrucel{
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px; 
+    height: 300px;
+    width: 500px;
+    overflow: hidden;
+}
+
+.itemCarrucel{
+   
+    height: 300px;
+    position: relative;
+    
+}
+
+
+.tarjetaCarrucel{
+    background-color: aqua;
+    height: 300px;
+    
+
+}
+
+.flechasCarrucel{
+    background-color: rgb(18, 114, 114, 0.3);
+    height: 370px;
+    position: absolute;
+    top:0;
+    height:300px;
+    width: 100%;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+
+A{
+    text-decoration: none;
+}
+
+#contenedorPuntos{
+    background-color: rgba(0, 0, 0, 0);
+    margin-left: 230px;
+    margin-right:100px;
+    display:inline-block;
+    justify-content: space-evenly;
+}
+
+#contenedorPuntos{
+    font-size: 1em;
+    font-style:none;
+    margin-bottom:5px;
+    
+}
+/*soluciono luego*/
+contenedorPuntos:hover{
+    
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background-color: aqua;
+    box-shadow:0 0 10px rgb(72, 255, 255);
+    transition: box-shadow 0,3S;
+    
+
+}
+
+
+punto2:hover{
+    
+    width:30px;
+    height:30px;
+    border-radius:60%;
+    background-color: aqua;
+    box-shadow:0 0 10px rgb(72, 255, 255);
+    transition: box-shadow 0,3S;
+
+    
+
+}
+
+punto3:hover{
+    
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background-color: aqua;
+    box-shadow:0 0 10px rgb(72, 255, 255);
+    transition: box-shadow 0,3S;
+    
+
+}
+
+
+
+/*cuadro de informacion OMORI*/
+
+#tituloCuadro{
+    display: inline-block;
+    padding: 6px 133.5px;
+    background-color: rgb(138, 238, 238);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT{
+    
+    display: inline-block;
+    padding: 6px 45px;
+    background-color: rgb(183, 251, 251);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT2{
+    
+    display: inline-block;
+    padding: 6px 39px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT3{
+    
+    display: inline-block;
+    padding: 6px 49px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT4{
+    
+    display: inline-block;
+    padding: 6px 1.9px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT5{
+    
+    display: inline-block;
+    padding: 6px 49px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+
+#subT6{
+    
+    display: inline-block;
+    padding: 6px 17.6px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT7{
+    
+    display: inline-block;
+    padding: 6px 51.3px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT8{
+    
+    display: inline-block;
+    padding: 39px 29.5px;
+    height: 120px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT9{
+    
+    display: inline-block;
+    padding: 8px 9px;
+    height: 120px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+
+#subT10{
+    
+    display: inline-block;
+    padding: 6px 37.6px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT11{
+    
+    display: inline-block;
+    padding: 6px 49px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT12{
+    
+    display: inline-block;
+    padding: 2px 93px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT13{
+    
+    display: inline-block;
+    padding: 8px 64.4px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+#subT14{
+    
+    display: inline-block;
+    padding: 2px 136.5px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT15{
+    
+    display: inline-block;
+    padding: 8px 81.4px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT16{
+    
+    display: inline-block;
+    padding: 2px 135.9px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT17{
+    
+    display: inline-block;
+    padding: 8px 109.8px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT18{
+    
+    display: inline-block;
+    padding: 2px 85.5px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT19{
+    
+    display: inline-block;
+    padding: 8px 50px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT20{
+    
+    display: inline-block;
+    padding: 8px 74.7px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT21{
+    
+    display: inline-block;
+    padding: 8px 143px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT22{
+    
+    display: inline-block;
+    padding: 8px 71.3px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT23{
+    
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT24{
+    
+    display: inline-block;
+    padding: 8px 15.7px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT25{
+    
+    display: inline-block;
+    padding: 8px 121px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT26{
+    
+    display: inline-block;
+    padding: 8px 90px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+/*cuadro undertale*/
+
+#tituloCuadro53{
+    display: inline-block;
+    padding: 6px 97.7px;
+    background-color: rgb(138, 238, 238);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT27{
+    
+    display: inline-block;
+    padding: 6px 43.8px;
+    background-color: rgb(183, 251, 251);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT28{
+    
+    display: inline-block;
+    padding: 6px 38.9px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT29{
+    
+    display: inline-block;
+    padding: 6px 48.2px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT30{
+    
+    display: inline-block;
+    padding: 6px 1.6px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT31{
+    
+    display: inline-block;
+    padding: 6px 48.5px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+
+#subT32{
+    
+    display: inline-block;
+    padding: 6px 17.2px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT33{
+    
+    display: inline-block;
+    padding: 6px 40.3px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT34{
+    
+    display: inline-block;
+    padding: 8px 28.9px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT35{
+    
+    display: inline-block;
+    padding: 8px 48.7px;
+    
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+
+#subT36{
+    
+    display: inline-block;
+    padding: 6px 37.4px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT37{
+    
+    display: inline-block;
+    padding: 6px 48.3px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT40{
+    
+    display: inline-block;
+    padding: 8px 38.9px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT41{
+    
+    display: inline-block;
+    padding: 8px 48.6px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT42{
+    
+    display: inline-block;
+    padding: 2px 94px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT43{
+    
+    display: inline-block;
+    padding: 8px 159px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT44{
+    
+    display: inline-block;
+    padding: 2px 84px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT45{
+    
+    display: inline-block;
+    padding: 8px 50px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT46{
+    
+    display: inline-block;
+    padding: 8px 39px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT47{
+    
+    display: inline-block;
+    padding: 8px 141.5px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT48{
+    
+    display: inline-block;
+    padding: 8px 137.4px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT49{
+    
+    display: inline-block;
+    padding: 8px 19px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT50{
+    
+    display: inline-block;
+    padding: 8px 15.5px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT51{
+    
+    display: inline-block;
+    padding: 8px 119.5px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT52{
+    
+    display: inline-block;
+    padding: 8px 88.8px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+
+/*deltarune cuadro*/
+
+#tituloCuadro53a{
+    display: inline-block;
+    padding: 6px 96.7px;
+    background-color: rgb(138, 238, 238);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT27a{
+    
+    display: inline-block;
+    padding: 6px 42.7px;
+    background-color: rgb(183, 251, 251);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT28a{
+    
+    display: inline-block;
+    padding: 6px 38.5px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT29a{
+    
+    display: inline-block;
+    padding: 6px 47.7px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT30a{
+    
+    display: inline-block;
+    padding: 6px 1.4px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT31a{
+    
+    display: inline-block;
+    padding: 6px 47.6px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+
+#subT32a{
+    
+    display: inline-block;
+    padding: 6px 16.9px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT33a{
+    
+    display: inline-block;
+    padding: 6px 48px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT34a{
+    
+    display: inline-block;
+    padding: 8px 28.7px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT35a{
+    
+    display: inline-block;
+    padding: 8px 47.9px;
+    
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+
+#subT36a{
+    
+    display: inline-block;
+    padding: 6px 37px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+#subT37a{
+    
+    display: inline-block;
+    padding: 6px 47.6px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT40a{
+    
+    display: inline-block;
+    padding: 8px 38px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT41a{
+    
+    display: inline-block;
+    padding: 8px 47.7px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT42a{
+    
+    display: inline-block;
+    padding: 2px 93.3px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT43a{
+    
+    display: inline-block;
+    padding: 8px 158.3px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+}
+
+#subT44a{
+    
+    display: inline-block;
+    padding: 2px 83.5px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT45a{
+    
+    display: inline-block;
+    padding: 8px 145.5px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT46a{
+    
+    display: inline-block;
+    padding: 6px 66.2px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT47a{
+    
+    display: inline-block;
+    padding: 8px 141px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT48a{
+    
+    display: inline-block;
+    padding: 8px 136.5px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT49a{
+    
+    display: inline-block;
+    padding: 8px 19px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT50a{
+    
+    display: inline-block;
+    padding: 8px 14.7px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+#subT51a{
+    
+    display: inline-block;
+    padding: 8px 119px;
+    background-color: rgb(91, 206, 206);
+    color: rgb(0, 0, 0);
+}
+
+#subT52a{
+    
+    display: inline-block;
+    padding: 8px 88px;
+    background-color: rgb(189, 237, 237);
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    
+}
+
+/*agregado el 10/07/2024,*/
+/* borde de cuadro1*/
+#ulu{
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    
+   
+}
+
+/*animacion de ir hacia arriva colo cambia cuacua por el nombre de que se animara*/
+cuacua{
+    
+    position: relative;
+    top:0;
+    transition: top 0.5s;
+}
+
+cuacua:hover{
+  top:-200px;
+}
+
+/* manipulacion de imagen*/
+.temmy{
+    position: absolute;
+    top: px;
+    right: 100px;
+    margin-right: 74px;
+    margin-left: 10px;
+}
+
+.cuadrodecolor{
+    float: right;
+    width: 50%;
+    
+
+}
+/* hasta aca lo de cuadro de color es para poner lo ala derecha
+sin afectar a los otros elementos*/
+
+/*boton de sitio web*/
+.masinfo{
+
+    margin-left: 80px;
+    background-color: rgb(4, 4, 4);
+    width: 300px;
+    height: 70px;
+    border: 5px solid rgb(235, 63, 0);
+    padding: 2px;
+    transition:background-color;
+
+}
+
+.masinfo:hover{
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(201, 54, 0);
+    box-shadow: 0 0 7px 2px rgb(255, 69, 2);
+}
+
+/*mover mas sensillo*/
+.toby{
+
+    float: right;
+}
+
+
+/*omori boton*/
+
+
+.mari1{
+    position: absolute;
+    top: px;
+    right: 100px;
+    margin-right: 74px;
+}
+
+.cuadrodecolor{
+    float: right;
+    width: 50%;
+    margin-top: 50px;
+
+}
+
+.masinfor{
+
+    margin-left: 80px;
+    background-color: rgb(4, 4, 4);
+    width: 300px;
+    height: 70px;
+    border: 5px solid rgb(255, 255, 255);
+    padding: 2px;
+    transition:background-color;
+
+}
+
+.masinfor:hover{
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(241, 235, 232);
+    box-shadow: 0 0 7px 2px rgb(255, 255, 255);
+}
+
+/*mover mas sensillo*/
+.omocat{
+
+    float: right;
+}
+
+
+/*deltarune*/
+
+.kriz{
+    position:absolute;
+    top: px;
+    right: 100px;
+    margin-right: 74px;
+    
+    
+}
+
+.cuadrodecolor{
+    float: right;
+    width: 50%;
+    margin-top: 50px;
+
+}
+
+.masinform{
+
+    margin-left: 80px;
+    background-color: rgb(4, 4, 4);
+    width: 300px;
+    height: 70px;
+    border: 5px solid rgb(255, 85, 0);
+    padding: 2px;
+    transition:background-color;
+
+}
+
+.masinform:hover{
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(255, 85, 0);
+    box-shadow: 0 0 7px 2px rgb(255, 68, 0);
+}
+
+/*mover mas sensillo*/
+.Fox{
+
+    float: right;
+    
+   
+}
+
+
+/*seccion de inicio*/
+
+#inicio-cuadro{
+    
+    width: 1010px; 
+    height: 7050px;
+    
+    align-items: center;
+}
+
+#conte{
+    position: relative;
+    width: 400px; 
+    height: 400px;
+}
+
+.imagen-fondo{
+    width: 100%;
+    height: 100%;
+    filter: brightness(40%);
+}
+
+
+.imagen-superpuesta{
+    
+    position: absolute;
+    top: 50px;
+    left: 9px;
+    width: 280px;
+    height: 490px;
+    border:6px solid white;
+    filter: brightness(80%);
+}
+
+.imagen-superpuesta1{
+    
+    position: absolute;
+    top: 50px;
+    left: 9px;
+    width: 280px;
+    height: 489px;
+    border:6px solid white;
+    margin-left: 350px;
+    filter: brightness(60%);
+}
+
+.imagen-superpuesta2{
+    
+    position: absolute;
+    top: 50px;
+    left: 9px;
+    width: 280px;
+    height: 489px;
+    border:6px solid white;
+    margin-left: 700px;
+    filter: brightness(70%);
+}
+
+.tenten{
+    position: relative;
+    text-align:center;
+    color: #fff;
+}
+
+.text-inicio2{
+    margin-top: -200px;
+    
+}
+
+.opciones .barra ul li {
+    position:relative;
+    float:left;
+}
+
+.opciones .barra ul li a:hover{
+   color:rgb(126, 97, 154);
+}
+
+.opciones .barra ul li a {
+    font-size: 18px;
+    padding: 20px;
+    display: block;
+    color:antiquewhite;
+    font-weight: 600;
+}
+
+#bloque{
+    box-shadow: inset 0 0 10px rgb(50, 1, 72);
+    box-shadow: inset 0 0 15px rgb(19, 0, 28);
+    
+}
+
+/* aca es de la info de personaje undertale*/
+.video-container{
+    width: 1px;
+    height: 1px;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.in{
+    display: flex;
+    align-items: center;
+}
+
+.img{
+
+    width: 100px;
+    height: 100px;
+    margin-right: 40px;
+}
+
+.sans{
+    width: 160px;
+    height: 120px;
+    margin-left: -20px;
+}
+
+.Papyrus{
+    width: 100px;
+    height: 150px;
+    margin-right: 20px;
+}
+/* aca termina*/
+
+/*OMORI*/
+
+.omiri{
+
+    width: 50px;
+    height: 170px;
+    margin-right: 20px;
+}
+
+.auu{
+
+    width: 70px;
+    height: 170px;
+    margin-right: 20px;
+}
+
+#descargass-cuadro{
+    width: 1010px; 
+    height: 7050px;
+    
+    align-items: center;
+}
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+ 
+}
+  
+.tipografia{
+    font-family: "Press Start 2P", system-ui;
+}
+
+#cuadrounder{
+    float: right;
+    margin-right: 20px;
+    margin-top: -480px;
+    border: 8px solid white;
+}
+
+#mettatom{
+    font-style: italic;
+
+}
