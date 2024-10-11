@@ -56,7 +56,7 @@ void main() async {
   var respuesta = await http.get(url);
   Map<String, dynamic> map = jsonDecode(respuesta.body);
   print('Response status: ${respuesta.statusCode}');
-  
+
   User user = User(map);
   print("Este es User:");
   print(user.id);
@@ -70,7 +70,7 @@ void main() async {
   print(address.street);
   print(address.zipcode);
   print(address.suite);
-  
+
   Geo geo = new Geo(map['address']['geo']);
   print("Esta es Geo:");
   print(geo.lat);

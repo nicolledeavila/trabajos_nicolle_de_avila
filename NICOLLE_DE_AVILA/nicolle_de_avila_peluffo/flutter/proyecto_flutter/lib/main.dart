@@ -1,165 +1,129 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-void main() {
-  runApp(MyApp());
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
 }
 
-class MyApp extends StatelessWidget {
+class _MyAppState extends State<MyApp> {
+  Future<User>? _futureUser;
+  final TextEditingController _controller = TextEditingController();
+
+  Future<User> fetchUser(int id) async {
+    var url = Uri.https('jsonplaceholder.typicode.com', 'users/$id');
+    var response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      return User(response.body as Map);
+    } else {
+      throw Exception('algo salio mal');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'INFORMACIÓN USUARIO',
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-        textTheme: TextTheme(
-          bodyText2: TextStyle(fontSize: 16),
-        ),
-      ),
-      home: UserScreen(),
-    );
-  }
-}
-
-class UserScreen extends StatefulWidget {
-  @override
-  _UserScreenState createState() => _UserScreenState();
-}
-
-class _UserScreenState extends State<UserScreen> {
-  bool _isLoading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadData(); 
-  }
-
-  Future<void> _loadData() async {
-    await Future.delayed(Duration(seconds: 3)); 
-    setState(() {
-      _isLoading = false; 
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Perfil del Usuario'),
-      ),
-      body: _isLoading 
-        ? Center(child: CircularProgressIndicator())
-        : Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                UserInfoCard(),
-                SizedBox(height: 20),
-                ElevatedButton.icon(
-                  onPressed: () {
-                    
-                  },
-                  icon: Icon(Icons.search),
-                  label: Text('Buscar'),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                    textStyle: TextStyle(fontSize: 18),
-                  ),
-                ),
-              ],
-            ),
+      title: 'PlaceHolder',
+      home: Scaffold(
+        appBar: AppBar(title: Text('User')),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              TextField(
+                controller: _controller,
+                decoration: InputDecoration(labelText: 'Ingresa ID'),
+                keyboardType: TextInputType.number,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  int id = int.tryParse(_controller.text) ?? 0;
+                  if (id > 0) {
+                    setState(() {
+                      _futureUser = fetchUser(id);
+                    });
+                  }
+                },
+                child: Text('vamos'),
+              ),
+              _futureUser == null
+                  ? Container()
+                  : FutureBuilder<User>(
+                      future: _futureUser,
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return CircularProgressIndicator();
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        } else if (snapshot.hasData) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Name: ${snapshot.data!.name}'),
+                            ],
+                          );
+                        } else {
+                          return Text('Valio monda');
+                        }
+                      },
+                    ),
+            ],
           ),
-    );
-  }
-}
-
-class UserInfoCard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            UserDetail(title: 'ID:', content: '1'),
-            UserDetail(title: 'Nombre:', content: 'Leanne Graham'),
-            UserDetail(title: 'Usuario:', content: 'Bret'),
-            UserDetail(title: 'Email:', content: 'Sincere@april.biz'),
-            SizedBox(height: 20),
-            SectionTitle(title: 'DIRECCIÓN'),
-            UserDetail(title: 'Calle:', content: 'Kulas Light'),
-            UserDetail(title: 'Suite:', content: 'Apt. 556'),
-            UserDetail(title: 'Ciudad:', content: 'Gwenborough'),
-            UserDetail(title: 'Código Postal:', content: '92998-3874'),
-            SizedBox(height: 20),
-            SectionTitle(title: 'GEO'),
-            UserDetail(title: 'Latitud:', content: '-37.3159'),
-            UserDetail(title: 'Longitud:', content: '81.1496'),
-            SizedBox(height: 20),
-            SectionTitle(title: 'EMPRESA'),
-            UserDetail(title: 'Teléfono:', content: '1-770-736-8031 x56442'),
-            UserDetail(title: 'Website:', content: 'hildegard.org'),
-            UserDetail(title: 'Nombre:', content: 'Romaguera-Crona'),
-            UserDetail(title: 'Slogan:', content: 'Multi-layered client-server neural-net'),
-            UserDetail(title: 'BS:', content: 'harness real-time e-markets'),
-          ],
         ),
       ),
     );
   }
 }
 
-class UserDetail extends StatelessWidget {
-  final String title;
-  final String content;
+class User {
+  String? name;
+  String? username;
+  String? email;
+  int? id;
 
-  UserDetail({required this.title, required this.content});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: Row(
-        children: [
-          Text(
-            '$title ',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-          ),
-          Expanded(
-            child: Text(
-              content,
-              style: TextStyle(fontSize: 16),
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-        ],
-      ),
-    );
+  User(Map map) {
+    name = map['name'];
+    username = map['username'];
+    email = map['email'];
+    id = map['id'];
   }
 }
 
-class SectionTitle extends StatelessWidget {
-  final String title;
+class Address {
+  String? street;
+  String? suite;
+  String? city;
+  String? zipcode;
 
-  SectionTitle({required this.title});
+  Address(Map map) {
+    street = map['street'];
+    suite = map['suite'];
+    city = map['city'];
+    zipcode = map['zipcode'];
+  }
+}
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-          color: Colors.teal[700],
-        ),
-      ),
-    );
+class Geo {
+  String? lat;
+  String? lng;
+
+  Geo(Map map) {
+    this.lat = map['lat'];
+    this.lng = map['lng'];
+  }
+}
+
+class Company {
+  String? name;
+  String? catchPhrase;
+  String? bs;
+
+  Company(Map map) {
+    this.name = map['name'];
+    this.catchPhrase = map['catchPhrase'];
+    this.bs = map['bs'];
   }
 }
