@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+void main() async {
+  runApp(MyApp());
+}
+
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -83,12 +87,26 @@ class User {
   String? username;
   String? email;
   int? id;
+  Address? address;
+  String? phone;
+  String? website;
+  Company? company;
 
-  User(Map map) {
-    name = map['name'];
-    username = map['username'];
-    email = map['email'];
-    id = map['id'];
+  User(String jsonString) {
+    Map<String, dynamic> map = jsonDecode(jsonString);
+    this.name = map['name'];
+    this.username = map['username'];
+    this.email = map['email'];
+    this.id = map['id'];
+
+    Map addr = map['address'];
+    this.address = new Address(addr);
+
+    this.phone = map['phone'];
+    this.website = map['website'];
+
+    Map compania = map['company'];
+    this.company = new Company(compania);
   }
 }
 
