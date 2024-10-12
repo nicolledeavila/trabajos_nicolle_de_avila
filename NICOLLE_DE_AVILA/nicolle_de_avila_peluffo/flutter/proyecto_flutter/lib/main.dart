@@ -20,9 +20,9 @@ class _MyAppState extends State<MyApp> {
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
-      return User(response.body as Map);
+      return User(jsonDecode(response.body));
     } else {
-      throw Exception('algo salio mal');
+      throw Exception('Algo salió mal');
     }
   }
 
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
                     });
                   }
                 },
-                child: Text('vamos'),
+                child: Text('Buscar'),
               ),
               _futureUser == null
                   ? Container()
@@ -67,10 +67,14 @@ class _MyAppState extends State<MyApp> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text('Name: ${snapshot.data!.name}'),
+                              Text('Username: ${snapshot.data!.username}'),
+                              Text('Email: ${snapshot.data!.email}'),
+                              Text('Phone: ${snapshot.data!.phone}'),
+                              Text('Company: ${snapshot.data!.company!.name}'),
                             ],
                           );
                         } else {
-                          return Text('Valio monda');
+                          return Text('No se encontró el usuario');
                         }
                       },
                     ),
@@ -92,21 +96,15 @@ class User {
   String? website;
   Company? company;
 
-  User(String jsonString) {
-    Map<String, dynamic> map = jsonDecode(jsonString);
+  User(Map<String, dynamic> map) {
     this.name = map['name'];
     this.username = map['username'];
     this.email = map['email'];
     this.id = map['id'];
-
-    Map addr = map['address'];
-    this.address = new Address(addr);
-
+    this.address = Address(map['address']);
     this.phone = map['phone'];
     this.website = map['website'];
-
-    Map compania = map['company'];
-    this.company = new Company(compania);
+    this.company = Company(map['company']);
   }
 }
 
@@ -116,7 +114,7 @@ class Address {
   String? city;
   String? zipcode;
 
-  Address(Map map) {
+  Address(Map<String, dynamic> map) {
     street = map['street'];
     suite = map['suite'];
     city = map['city'];
@@ -128,7 +126,7 @@ class Geo {
   String? lat;
   String? lng;
 
-  Geo(Map map) {
+  Geo(Map<String, dynamic> map) {
     this.lat = map['lat'];
     this.lng = map['lng'];
   }
@@ -139,7 +137,7 @@ class Company {
   String? catchPhrase;
   String? bs;
 
-  Company(Map map) {
+  Company(Map<String, dynamic> map) {
     this.name = map['name'];
     this.catchPhrase = map['catchPhrase'];
     this.bs = map['bs'];
