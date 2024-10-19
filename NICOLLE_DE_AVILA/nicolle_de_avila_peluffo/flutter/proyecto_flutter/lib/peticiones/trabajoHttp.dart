@@ -2,83 +2,122 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class User {
-  String? name;
+   String? name;
   String? username;
   String? email;
   int? id;
+  Address? address;
+  String? phone;
+  String? website;
+  Company? company;
 
-  User(Map map) {
+ User(Map<String, dynamic> map){
     name = map['name'];
     username = map['username'];
     email = map['email'];
     id = map['id'];
+    
+    Map address = map['address'];
+    this.address = Address(address);
+
+    phone = map['phone'];
+    website = map['website'];
+    Map company = map['company'];
+    this.company = Company(company);
+  }
+  
+  @override
+  String toString(){
+    return "ID: $id, "
+    "NAME: $name, "
+    "USERNAME: $username,"
+    "EMAIL: $email,"
+    "$address, "
+    "PHONE: $phone, "
+    "WEBSITE: $website, "
+    "$company. ";
+    
   }
 }
+class Company {
+  String? name;
+  String? catchPhrase;
+  String? bs;
 
+  Company(Map company) {
+    name = company['name'];
+    catchPhrase = company['catchPhrase'];
+    bs = company['bs'];
+  }
+
+  @override
+  String toString(){
+    return "NAME: $name, "
+    "CATCHPHRASE: $catchPhrase,"
+    "BS: $bs.";
+  }
+}
 class Address {
   String? street;
   String? suite;
   String? city;
   String? zipcode;
+  Geo? geo;
 
-  Address(Map map) {
-    street = map['street'];
-    suite = map['suite'];
-    city = map['city'];
-    zipcode = map['zipcode'];
+  Address(Map address) {
+    street = address['street'];
+    suite = address['suite'];
+    city = address['city'];
+    zipcode = address['zipcode'];
+
+    Map geo = address['geo'];
+    this.geo= Geo(geo);
   }
+  @override
+  String toString(){
+    return "STREET $street, "
+    "SUITE $suite, "
+    "CITY: $city, "
+    "ZIPCODE: $zipcode, "
+    "${this.geo}.";
+  }
+ 
 }
 
 class Geo {
   String? lat;
   String? lng;
 
-  Geo(Map map) {
-    this.lat = map['lat'];
-    this.lng = map['lng'];
+  Geo(Map geo) {
+    lat = geo['lat'];
+    lng = geo['lng'];
+  }
+  @override
+  String toString() {
+    return "LAT: $lat, "
+    "LNG: $lng";
   }
 }
 
-class Company {
-  String? name;
-  String? catchPhrase;
-  String? bs;
 
-  Company(Map map) {
-    this.name = map['name'];
-    this.catchPhrase = map['catchPhrase'];
-    this.bs = map['bs'];
-  }
-}
 
 void main() async {
   var url = Uri.https('jsonplaceholder.typicode.com', '/users/1');
   var respuesta = await http.get(url);
   Map<String, dynamic> map = jsonDecode(respuesta.body);
   print('Response status: ${respuesta.statusCode}');
-
-  User user = User(map);
+  
+ User user = User(map);
   print("Este es User:");
-  print(user.id);
-  print(user.name);
-  print(user.email);
-  print(user.username);
-
-  Address address = new Address(map['address']);
+  print(user);
+  
   print("Este es Address:");
-  print(address.city);
-  print(address.street);
-  print(address.zipcode);
-  print(address.suite);
+  print(user.address);
 
-  Geo geo = new Geo(map['address']['geo']);
   print("Esta es Geo:");
-  print(geo.lat);
-  print(geo.lng);
+  print(user.address?.geo);
 
-  Company company = new Company(map['company']);
   print("Este es Company:");
-  print(company.bs);
-  print(company.catchPhrase);
-  print(company.name);
+  print(user.company);
+ 
 }
