@@ -70,7 +70,13 @@ class _MyAppState extends State<MyApp> {
                               Text('Username: ${snapshot.data!.username}'),
                               Text('Email: ${snapshot.data!.email}'),
                               Text('Phone: ${snapshot.data!.phone}'),
-                              Text('Company: ${snapshot.data!.company!.name}'),
+                              Text('website: ${snapshot.data!.website}'),
+                              Text('Company: ${snapshot.data!.company}'),
+                              Text('address: ${snapshot.data!.address}'),
+                              Text('Geo: ${snapshot.data!.address!.geo}'),
+                              
+
+
                             ],
                           );
                         } else {
@@ -87,7 +93,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class User {
-  String? name;
+   String? name;
   String? username;
   String? email;
   int? id;
@@ -96,50 +102,90 @@ class User {
   String? website;
   Company? company;
 
-  User(Map<String, dynamic> map) {
-    this.name = map['name'];
-    this.username = map['username'];
-    this.email = map['email'];
-    this.id = map['id'];
-    this.address = Address(map['address']);
-    this.phone = map['phone'];
-    this.website = map['website'];
-    this.company = Company(map['company']);
+ User(Map<String, dynamic> map){
+    name = map['name'];
+    username = map['username'];
+    email = map['email'];
+    id = map['id'];
+    
+    Map address = map['address'];
+    this.address = Address(address);
+
+    phone = map['phone'];
+    website = map['website'];
+    Map company = map['company'];
+    this.company = Company(company);
+  }
+  
+  @override
+  String toString(){
+    return "ID: $id, "
+    "NAME: $name, "
+    "USERNAME: $username,"
+    "EMAIL: $email,"
+    "$address, "
+    "PHONE: $phone, "
+    "WEBSITE: $website, "
+    "$company. ";
+    
   }
 }
+class Company {
+  String? name;
+  String? catchPhrase;
+  String? bs;
 
+  Company(Map company) {
+    name = company['name'];
+    catchPhrase = company['catchPhrase'];
+    bs = company['bs'];
+  }
+
+  @override
+  String toString(){
+    return "NAME: $name, "
+    "CATCHPHRASE: $catchPhrase,"
+    "BS: $bs.";
+  }
+}
 class Address {
   String? street;
   String? suite;
   String? city;
   String? zipcode;
+  Geo? geo;
 
-  Address(Map<String, dynamic> map) {
-    street = map['street'];
-    suite = map['suite'];
-    city = map['city'];
-    zipcode = map['zipcode'];
+  Address(Map address) {
+    street = address['street'];
+    suite = address['suite'];
+    city = address['city'];
+    zipcode = address['zipcode'];
+
+    Map geo = address['geo'];
+    this.geo= Geo(geo);
   }
+  @override
+  String toString(){
+    return "STREET $street, "
+    "SUITE $suite, "
+    "CITY: $city, "
+    "ZIPCODE: $zipcode, "
+    "${this.geo}.";
+  }
+ 
 }
 
 class Geo {
   String? lat;
   String? lng;
 
-  Geo(Map<String, dynamic> map) {
-    this.lat = map['lat'];
-    this.lng = map['lng'];
+  Geo(Map geo) {
+    lat = geo['lat'];
+    lng = geo['lng'];
   }
-}
-
-class Company {
-  String? name;
-  String? catchPhrase;
-  String? bs;
-
-  Company(Map<String, dynamic> map) {
-    this.name = map['name'];
-    this.catchPhrase = map['catchPhrase'];
-    this.bs = map['bs'];
+  @override
+  String toString() {
+    return "LAT: $lat, "
+    "LNG: $lng";
   }
 }
