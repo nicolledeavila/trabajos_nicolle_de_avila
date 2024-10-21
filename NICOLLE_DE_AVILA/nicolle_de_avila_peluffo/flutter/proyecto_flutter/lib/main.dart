@@ -30,8 +30,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PlaceHolder',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text('User')),
+        appBar: AppBar(
+          title: Text('User'),
+          backgroundColor: Colors.blue,
+        ),
+        backgroundColor: Colors.blue[100],
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -41,6 +46,7 @@ class _MyAppState extends State<MyApp> {
                 decoration: InputDecoration(labelText: 'Ingresa ID'),
                 keyboardType: TextInputType.number,
               ),
+              SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   int id = int.tryParse(_controller.text) ?? 0;
@@ -64,19 +70,17 @@ class _MyAppState extends State<MyApp> {
                           return Text('${snapshot.error}');
                         } else if (snapshot.hasData) {
                           return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
+                              SizedBox(height: 20),
                               Text('Name: ${snapshot.data!.name}'),
                               Text('Username: ${snapshot.data!.username}'),
                               Text('Email: ${snapshot.data!.email}'),
                               Text('Phone: ${snapshot.data!.phone}'),
                               Text('website: ${snapshot.data!.website}'),
-                              Text('Company: ${snapshot.data!.company}'),
-                              Text('address: ${snapshot.data!.address}'),
+                              Text('Company: ${snapshot.data!.company!.name}'),
+                              Text('address: ${snapshot.data!.address!.city}'),
                               Text('Geo: ${snapshot.data!.address!.geo}'),
-                              
-
-
                             ],
                           );
                         } else {
@@ -93,7 +97,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class User {
-   String? name;
+  String? name;
   String? username;
   String? email;
   int? id;
@@ -102,12 +106,12 @@ class User {
   String? website;
   Company? company;
 
- User(Map<String, dynamic> map){
+  User(Map<String, dynamic> map) {
     name = map['name'];
     username = map['username'];
     email = map['email'];
     id = map['id'];
-    
+
     Map address = map['address'];
     this.address = Address(address);
 
@@ -116,20 +120,20 @@ class User {
     Map company = map['company'];
     this.company = Company(company);
   }
-  
+
   @override
-  String toString(){
+  String toString() {
     return "ID: $id, "
-    "NAME: $name, "
-    "USERNAME: $username,"
-    "EMAIL: $email,"
-    "$address, "
-    "PHONE: $phone, "
-    "WEBSITE: $website, "
-    "$company. ";
-    
+        "NAME: $name, "
+        "USERNAME: $username,"
+        "EMAIL: $email,"
+        "$address, "
+        "PHONE: $phone, "
+        "WEBSITE: $website, "
+        "$company. ";
   }
 }
+
 class Company {
   String? name;
   String? catchPhrase;
@@ -142,12 +146,13 @@ class Company {
   }
 
   @override
-  String toString(){
+  String toString() {
     return "NAME: $name, "
-    "CATCHPHRASE: $catchPhrase,"
-    "BS: $bs.";
+        "CATCHPHRASE: $catchPhrase,"
+        "BS: $bs.";
   }
 }
+
 class Address {
   String? street;
   String? suite;
@@ -162,17 +167,16 @@ class Address {
     zipcode = address['zipcode'];
 
     Map geo = address['geo'];
-    this.geo= Geo(geo);
+    this.geo = Geo(geo);
   }
   @override
-  String toString(){
+  String toString() {
     return "STREET $street, "
-    "SUITE $suite, "
-    "CITY: $city, "
-    "ZIPCODE: $zipcode, "
-    "${this.geo}.";
+        "SUITE $suite, "
+        "CITY: $city, "
+        "ZIPCODE: $zipcode, "
+        "${this.geo}.";
   }
- 
 }
 
 class Geo {
@@ -186,6 +190,6 @@ class Geo {
   @override
   String toString() {
     return "LAT: $lat, "
-    "LNG: $lng";
+        "LNG: $lng";
   }
 }
