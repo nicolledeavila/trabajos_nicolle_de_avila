@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class User {
-   String? name;
+  String? name;
   String? username;
   String? email;
   int? id;
@@ -11,12 +11,12 @@ class User {
   String? website;
   Company? company;
 
- User(Map<String, dynamic> map){
+  User(Map<String, dynamic> map) {
     name = map['name'];
     username = map['username'];
     email = map['email'];
     id = map['id'];
-    
+
     Map address = map['address'];
     this.address = Address(address);
 
@@ -25,20 +25,20 @@ class User {
     Map company = map['company'];
     this.company = Company(company);
   }
-  
+
   @override
-  String toString(){
+  String toString() {
     return "ID: $id, "
-    "NAME: $name, "
-    "USERNAME: $username,"
-    "EMAIL: $email,"
-    "$address, "
-    "PHONE: $phone, "
-    "WEBSITE: $website, "
-    "$company. ";
-    
+        "NAME: $name, "
+        "USERNAME: $username,"
+        "EMAIL: $email,"
+        "$address, "
+        "PHONE: $phone, "
+        "WEBSITE: $website, "
+        "$company. ";
   }
 }
+
 class Company {
   String? name;
   String? catchPhrase;
@@ -51,12 +51,13 @@ class Company {
   }
 
   @override
-  String toString(){
+  String toString() {
     return "NAME: $name, "
-    "CATCHPHRASE: $catchPhrase,"
-    "BS: $bs.";
+        "CATCHPHRASE: $catchPhrase,"
+        "BS: $bs.";
   }
 }
+
 class Address {
   String? street;
   String? suite;
@@ -71,17 +72,16 @@ class Address {
     zipcode = address['zipcode'];
 
     Map geo = address['geo'];
-    this.geo= Geo(geo);
+    this.geo = Geo(geo);
   }
   @override
-  String toString(){
+  String toString() {
     return "STREET $street, "
-    "SUITE $suite, "
-    "CITY: $city, "
-    "ZIPCODE: $zipcode, "
-    "${this.geo}.";
+        "SUITE $suite, "
+        "CITY: $city, "
+        "ZIPCODE: $zipcode, "
+        "${this.geo}.";
   }
- 
 }
 
 class Geo {
@@ -95,22 +95,20 @@ class Geo {
   @override
   String toString() {
     return "LAT: $lat, "
-    "LNG: $lng";
+        "LNG: $lng";
   }
 }
-
-
 
 void main() async {
   var url = Uri.https('jsonplaceholder.typicode.com', '/users/1');
   var respuesta = await http.get(url);
   Map<String, dynamic> map = jsonDecode(respuesta.body);
   print('Response status: ${respuesta.statusCode}');
-  
- User user = User(map);
+
+  User user = User(map);
   print("Este es User:");
   print(user);
-  
+
   print("Este es Address:");
   print(user.address);
 
@@ -119,5 +117,4 @@ void main() async {
 
   print("Este es Company:");
   print(user.company);
- 
 }
