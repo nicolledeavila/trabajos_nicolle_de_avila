@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proyect/peticiones/peticion.dart';
 
 
+
 class Success extends StatelessWidget {
   User post;
 
@@ -13,15 +14,14 @@ class Success extends StatelessWidget {
       children: [
         SizedBox(height: 20.0,),
         Image.network(
-          'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg', 
-          width: 300.0,
+          'https://miro.medium.com/v2/da:true/resize:fit:1200/0*U0Jwe2Gm5mdYBGCv', 
+          width: 400.00,
+          
         ),
-        Text(post.address! as String, style: TextStyle(fontSize: 26.0)), 
+        Text(post.phone! as String, style: TextStyle(fontSize: 26.0)), 
         Text(post.toString()),
         Row(children: [
-          Icon(Icons.favorite),
-          Icon(Icons.audiotrack),
-          Icon(Icons.beach_access)
+          
         ],
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         )
