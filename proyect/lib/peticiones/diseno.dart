@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:proyect/peticiones/diseno.dart';
 import 'package:proyect/peticiones/peticiones.dart';
 
 class Success extends StatelessWidget {
@@ -10,33 +9,59 @@ class Success extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(1.0), // Espacio alrededor del contenido
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start, // Alinea los textos a la izquierda
         children: [
           SizedBox(height: 20.0),
-          Center(
-            child: Image.network(
-              'https://miro.medium.com/v2/da:true/resize:fit:1200/0*U0Jwe2Gm5mdYBGCv',
-              width: 400.0,
-            ),
+          Image.network(
+            'https://miro.medium.com/v2/da:true/resize:fit:1200/0*U0Jwe2Gm5mdYBGCv',
+            width: 300.0,
           ),
-          SizedBox(height: 40.0),
+          SizedBox(height: 1.0),
           Text(
-            'Teléfono: ${post.phone ?? 'Teléfono no disponible'}',
-            style: TextStyle(fontSize: 20.0),
+            'Nombre:',
+            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
           ),
           Text(
-            'Nombre: ${post.name ?? 'Nombre no disponible'}',
-            style: TextStyle(fontSize: 20.0),
+            post.name ?? "Nombre no disponible",
+            style: TextStyle(fontSize: 24.0),
+          ),
+          SizedBox(height: 10.0),
+          Text(
+            'Email:',
+            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
           ),
           Text(
-            'Email: ${post.email ?? 'Email no disponible'}',
-            style: TextStyle(fontSize: 20.0),
+            post.email ?? "Email no disponible",
+            style: TextStyle(fontSize: 24.0),
+          ),
+          SizedBox(height: 10.0),
+          Text(
+            'Teléfono:',
+            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
           ),
           Text(
-            'Sitio web: ${post.website ?? 'Sitio web no disponible'}',
-            style: TextStyle(fontSize: 20.0),
+            post.phone ?? "Teléfono no disponible",
+            style: TextStyle(fontSize: 24.0),
+          ),
+          SizedBox(height: 10.0),
+          Text(
+            'Dirección:',
+            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            post.address?.toString() ?? "Dirección no disponible", // Asegúrate de que la clase Address tenga un método toString
+            style: TextStyle(fontSize: 24.0),
+          ),
+          SizedBox(height: 20.0),
+          Row(
+            children: [
+              Icon(Icons.favorite),
+              Icon(Icons.audiotrack),
+              Icon(Icons.beach_access),
+            ],
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           ),
         ],
       ),
