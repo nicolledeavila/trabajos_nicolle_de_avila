@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 *{
     margin: 0;
     padding: 0;
@@ -11,13 +10,6 @@
     list-style: none;
 }
 
-#inicio-informacion{
-    background-color: rgb(33, 31, 31);
-    width: 1010px; 
-    height: 6000px;
-    
-    align-items: center;
-}
 
 body{
     font-family: "Poppins", sans-serif;
@@ -27,6 +19,67 @@ body{
     max-width: 12000px;
     max-height:1000px;
     margin: 0 auto; 
+}
+
+.header{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)),
+        url(imagenes/6e6bb860-12cb-4a65-af5a-42fc2540a750.gif);
+    background-position: center bottom;
+    background-repeat:no-repeat;
+    background-size: cover ;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    margin-right: 20px;
+    color: antiquewhite;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.menu .navbar ul li {
+    position:relative;
+    float:left;
+}
+
+.menu .navbar ul li a:hover{
+   color:rgb(126, 97, 154);
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    display: block;
+    color:antiquewhite;
+    font-weight: 600;
+}
+
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    margin-right: 20px;
+    width: 25px;
+
+}
+
+.menu label{
+    cursor: pointer;
+    display: none;
 }
 
 body{
@@ -60,14 +113,12 @@ body{
     background-color: rgb(2, 255, 255);
     color: rgb(0, 0, 0);
     text-transform: uppercase;
-    
+
 }
 
 .btn-1:hover{
     background-color: rgb(6, 81, 81);
 }
-
-
 
 /* aca inicia el carrucel*/
 
@@ -167,7 +218,12 @@ punto3:hover{
 
 }
 
+#textTarea{
+  
+    background-color: black;
+    
 
+}
 
 /*cuadro de informacion OMORI*/
 
@@ -868,7 +924,6 @@ punto3:hover{
 #ulu{
     font-weight: bold;
     color: rgb(255, 255, 255);
-    
    
 }
 
@@ -889,14 +944,12 @@ cuacua:hover{
     position: absolute;
     top: px;
     right: 100px;
-    margin-right: 74px;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .cuadrodecolor{
     float: right;
     width: 50%;
-    
 
 }
 /* hasta aca lo de cuadro de color es para poner lo ala derecha
@@ -935,7 +988,7 @@ sin afectar a los otros elementos*/
     position: absolute;
     top: px;
     right: 100px;
-    margin-right: 74px;
+    margin-right: 10px;
 }
 
 .cuadrodecolor{
@@ -976,7 +1029,7 @@ sin afectar a los otros elementos*/
     position:absolute;
     top: px;
     right: 100px;
-    margin-right: 74px;
+    margin-right: 10px;
     
     
 }
@@ -1018,9 +1071,9 @@ sin afectar a los otros elementos*/
 /*seccion de inicio*/
 
 #inicio-cuadro{
-    
+    background-color: rgb(33, 31, 31);
     width: 1010px; 
-    height: 7050px;
+    height: 5000px;
     
     align-items: center;
 }
@@ -1079,109 +1132,17 @@ sin afectar a los otros elementos*/
     color: #fff;
 }
 
+.text-inicio{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    margin-top: -50px;
+    
+}
+
+
 .text-inicio2{
-    margin-top: -200px;
-    
-}
-
-.opciones .barra ul li {
-    position:relative;
-    float:left;
-}
-
-.opciones .barra ul li a:hover{
-   color:rgb(126, 97, 154);
-}
-
-.opciones .barra ul li a {
-    font-size: 18px;
-    padding: 20px;
-    display: block;
-    color:antiquewhite;
-    font-weight: 600;
-}
-
-#bloque{
-    box-shadow: inset 0 0 10px rgb(50, 1, 72);
-    box-shadow: inset 0 0 15px rgb(19, 0, 28);
-    
-}
-
-/* aca es de la info de personaje undertale*/
-.video-container{
-    width: 1px;
-    height: 1px;
-    margin-left: 60px;
-    margin-top: 20px;
-}
-
-.in{
-    display: flex;
-    align-items: center;
-}
-
-.img{
-
-    width: 100px;
-    height: 100px;
-    margin-right: 40px;
-}
-
-.sans{
-    width: 160px;
-    height: 120px;
-    margin-left: -20px;
-}
-
-.Papyrus{
-    width: 100px;
-    height: 150px;
-    margin-right: 20px;
-}
-/* aca termina*/
-
-/*OMORI*/
-
-.omiri{
-
-    width: 50px;
-    height: 170px;
-    margin-right: 20px;
-}
-
-.auu{
-
-    width: 70px;
-    height: 170px;
-    margin-right: 20px;
-}
-
-#descargass-cuadro{
-    width: 1010px; 
-    height: 7050px;
-    
-    align-items: center;
-}
-
-.press-start-2p-regular {
-    font-family: "Press Start 2P", system-ui;
-    font-weight: 400;
-    font-style: normal;
- 
-}
-  
-.tipografia{
-    font-family: "Press Start 2P", system-ui;
-}
-
-#cuadrounder{
-    float: right;
-    margin-right: 20px;
-    margin-top: -480px;
-    border: 8px solid white;
-}
-
-#mettatom{
-    font-style: italic;
-
+    margin-top: -300px;
 }
