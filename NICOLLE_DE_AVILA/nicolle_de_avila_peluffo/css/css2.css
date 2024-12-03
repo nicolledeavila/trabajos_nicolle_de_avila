@@ -1,0 +1,162 @@
+
+body{
+    font-family: "Poppins", Arial Black,sans-serif;
+}
+
+header{
+    border: 1px solid rgb(163, 161, 161);
+    width: 97%;
+    height: 8em;
+    margin: auto;
+    margin-top: 2px;
+    background-color: rgb(163, 161, 161);
+    border-top-left-radius: 10px;
+    border-top-right-radius:10px  ;
+}
+
+nav{
+    border: 1px solid rgb(2, 48, 22);
+    width: 97%;
+    height: 4em;
+    margin: auto;
+    background-color:rgb(2, 48, 22) ;
+    border-bottom-left-radius:10px ;
+    border-bottom-right-radius:10px ;
+}
+
+nav>#textoo{
+    display: inline-block;
+    color: #FFFF;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+#divisor{
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0.5px;
+}
+article{
+    border: 1px solid  rgb(255, 255, 113) ;
+    width: 56%;
+    height: 9em;
+    margin-left: 1.5%;
+    margin-top: 9px;
+    background-color: rgb(255, 255, 113);
+    border-radius: 10px;
+    
+}
+#article2{
+    border: 1px solid  rgb(255, 255, 113);
+    width: 56%;
+    height: 9.5em;
+    margin-left: 1.5%;
+    margin-top: 8px;
+    border-radius: 10px;
+}
+aside{
+    position: absolute;
+    border: 1px solid rgb(2, 48, 22) ;
+    width: 36%;
+    height: 2em;
+    top: 13.2em;;
+    left: 61%;
+    border-top-left-radius:10px ;
+    border-top-right-radius:10px ;
+    background-color:rgb(3, 10, 6);
+    border-right: 4px;
+}
+
+section{
+    position: absolute;
+    border: 1px solid rgb(2, 48, 22);
+    width: 36%;
+    height: 18em;
+    top: 15.2em;;
+    left: 61%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
+    background-color: rgb(2, 48, 22) ;
+    border-right: 5px;
+
+}
+
+footer{
+    border: 1px solid rgb(1, 22, 10);
+    width: 97%;
+    height: 5em;
+    margin: auto;
+    margin-top: 20px;
+    background-color: rgb(1, 22, 10);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
+}
+#perro1{
+
+   background-size: cover;
+   position:absolute;
+   height: 128px;
+   width: 125px;
+   left: 22em;
+    top: 13.8em;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px ;
+}
+
+#perro2{
+    width: 128px;
+    height: 125px;
+    position: absolute;
+    left: 22em;
+    top: 23.8em;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px ;
+}
+
+aside>#textooo{
+    color: #ffffff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 22px;
+    margin-top: 10px;
+    font-size: 17px;
+    text-align: center;
+    
+}
+
+section>#textoseccion{
+    font-family:Arial, Helvetica;
+    color: #ffffff;
+    margin-left: 22px;
+    font-size: 17px;
+
+}
+
+form{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-left:60px ;
+    
+}
+
+input[type='search']{
+ position: absolute;
+ width: 53%;
+ height: 25px;
+ padding: 1px;
+ top: 17px;
+ left: 90px;
+  
+}
+
+button{
+    position: absolute;
+    top: 258px;
+    left: 90px;
+}
+
+
+
+
