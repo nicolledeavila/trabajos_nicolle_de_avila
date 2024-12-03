@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -123,3 +124,30 @@ class _UserSearchWidgetState extends State<UserSearchWidget> {
 }
 
 
+=======
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(myapp());
+}
+
+class myapp extends StatelessWidget{
+  @override
+  Widget build(BuildContext){ 
+    return MaterialApp(
+      title:'hola',
+      theme: ThemeData(primarySwatch: Colors.orange,),
+      home:myhomePage(),
+    );
+  }
+
+ class myhomePage extends StatefulWidget{
+  @override
+   _myhomePageState();
+ }
+ class _myhomePageState extends State<myhomePage>{
+
+ }
+
+}
+>>>>>>> 637da75a2ab5ce1cd107e84a002c263c8661ef64
