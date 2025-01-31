@@ -21,8 +21,7 @@ class Homescreen extends StatelessWidget{
           child: Container(
             padding: const EdgeInsets.all(90),
             child: DecoratedBox(decoration: BoxDecoration(border: Border.all(color: Colors.black,width: 2),
-            )
-            ),
+            )),
             width: 10,
             height: 10,
           ),
